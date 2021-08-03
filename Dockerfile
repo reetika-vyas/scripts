@@ -27,7 +27,7 @@ RUN tar --extract --gunzip --no-same-owner --directory /out oc --file *.tar.gz
 # Make binaries executable
 RUN chmod -R +x /out
 
-FROM build-stage0 as build-stage1
+FROM build-stage0
 
 COPY --from=build-stage0 /out/oc  /out/oc
 
